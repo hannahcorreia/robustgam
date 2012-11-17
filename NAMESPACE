@@ -1,0 +1,2 @@
+useDynLib(robustgam)
+export(robustgam, pred.robustgam, robustgam.GIC, robustgam.GIC.optim, robustgam.CV)
