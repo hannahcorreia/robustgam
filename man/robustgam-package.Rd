@@ -11,8 +11,8 @@ This package provides robust estimation for generalized additive models. It impl
 \tabular{ll}{
 Package: \tab robustgam\cr
 Type: \tab Package\cr
-Version: \tab 0.1.4\cr
-Date: \tab 2012-11-17\cr
+Version: \tab 0.1.5\cr
+Date: \tab 2013-1-6\cr
 License: \tab GPL (>= 2)\cr
 }
 }
@@ -21,7 +21,7 @@ Raymond K. W. Wong
 Maintainer: Raymond K. W. Wong <raymondkww.dev@gmail.com>
 }
 \references{
-Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. Submitted to \emph{Journal of Graphical and Computational Statistics}.
+Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
 }
 \keyword{Bounded score function, Generalized information criterion, Generalized linear model, Robust estimating equation, Robust quasi-likelihood, Smoothing parameter selection}
 \examples{

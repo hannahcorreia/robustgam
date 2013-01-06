@@ -1,5 +1,5 @@
 # cross-validation
-robustgam.crossval <- function(X, y, family, p=3, K=30, c=1.345, sp, show.msg=FALSE, count.lim=200, w.count.lim=50, smooth.basis="tp", wx=FALSE, ngroup=length(y)){
+robustgam.crossval <- function(X, y, family, p=3, K=30, c=1.345, sp, show.msg=FALSE, count.lim=200, w.count.lim=50, smooth.basis="tp", wx=FALSE, ngroup=length(y), seed=12345){
   if (family$family=="poisson") expect <- expect.poisson
   else if (family$family=="binomial") expect <- expect.binomial
   else if (family$family=="gaussian") expect <- expect.gaussian
@@ -23,6 +23,7 @@ robustgam.crossval <- function(X, y, family, p=3, K=30, c=1.345, sp, show.msg=FA
   }
 
   #dividing the groups
+  set.seed(seed)
   n <- length(y)
   leave.out <- trunc(n/ngroup)
   o <- sample(1:n)
@@ -64,7 +65,7 @@ robustgam.crossval <- function(X, y, family, p=3, K=30, c=1.345, sp, show.msg=FA
   return(list(Qm=Qm, cv.fit=cv.fit, sp=sp, ngroup=ngroup, groups=groups, u=u))
 }
 
-robustgam.CV <- function(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=200, w.count.lim=50, smooth.basis="tp", wx=FALSE, sp.min=1e-7, sp.max=1e-3, len=50, show.msg.2=TRUE, ngroup=length(y)){
+robustgam.CV <- function(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=200, w.count.lim=50, smooth.basis="tp", wx=FALSE, sp.min=1e-7, sp.max=1e-3, len=50, show.msg.2=TRUE, ngroup=length(y), seed=12345){
   X <- matrix(X,nrow=length(y))
   nxs <- ncol(X)
   if (length(sp.min)==1){
@@ -86,7 +87,7 @@ robustgam.CV <- function(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count
   for (i in (1:prod(len))){
     tempind <- arrayInd(i,len)
     tempsp <- sapply(1:nxs,function(jj,sp,ind){sp[[jj]][ind[jj]]},sp=sp,ind=as.vector(tempind))
-    temp <- robustgam.crossval(X=X, y=y, family=family, p=p, K=K, c=c, sp=tempsp, show.msg=show.msg, count.lim=count.lim, w.count.lim=w.count.lim, smooth.basis=smooth.basis, wx=wx, ngroup=ngroup)
+    temp <- robustgam.crossval(X=X, y=y, family=family, p=p, K=K, c=c, sp=tempsp, show.msg=show.msg, count.lim=count.lim, w.count.lim=w.count.lim, smooth.basis=smooth.basis, wx=wx, ngroup=ngroup, seed=seed)
     criteria[tempind] <- temp$Qm
     if (show.msg.2) {cat("#### ", as.vector(tempind), ": sp=",tempsp," finished. ####\n")}
   }

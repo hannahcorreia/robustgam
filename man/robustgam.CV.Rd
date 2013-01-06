@@ -11,7 +11,7 @@ This function combines the \code{\link{robustgam}} with automatic smoothing para
 \usage{
 robustgam.CV(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=200,
              w.count.lim=50, smooth.basis="tp", wx=FALSE, sp.min=1e-7, sp.max=1e-3,
-             len=50, show.msg.2=TRUE, ngroup=length(y))
+             len=50, show.msg.2=TRUE, ngroup=length(y), seed=12345)
 }
 
 \arguments{
@@ -31,6 +31,7 @@ robustgam.CV(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=200,
 \item{len}{A vector of grid sizes. If only one value is specified, it will be used for all smoothing parameters.}
 \item{show.msg.2}{If \code{show.msg.2=T}, progress of the grid search is displayed.}
 \item{ngroup}{number of group used in the cross validation. If \code{ngroup=length(y)}, full cross validation is implemented. If \code{ngroup=2}, two-fold cross validation is implemented.}
+\item{seed}{The seed for random generator used in generating partitions.}
 }
 
 \value{
@@ -49,7 +50,7 @@ robustgam.CV(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=200,
 }
 
 \references{
-Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. Submitted to the \emph{Journal of Graphical and Computational Statistics}.
+Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
 }
 
 \author{

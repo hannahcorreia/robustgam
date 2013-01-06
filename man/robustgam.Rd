@@ -43,7 +43,7 @@ robustgam(X, y, family, p=3, K=30, c=1.345, sp=-1, show.msg=FALSE, count.lim=200
 }
 
 \references{
-Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. Submitted to the \emph{Journal of Graphical and Computational Statistics}.
+Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
 }
 
 \author{
