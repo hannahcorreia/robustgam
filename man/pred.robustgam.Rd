@@ -24,7 +24,7 @@ pred.robustgam(fit, data, type="response")
 }
 
 \references{
-Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
+Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2013) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
 }
 
 \author{

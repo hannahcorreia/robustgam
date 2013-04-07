@@ -24,9 +24,9 @@ robustgam.GIC.optim(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=
 \item{c}{tunning parameter for Huber function; a smaller value of c corresponds to a more robust fit. It is recommended to set as 1.2 and 1.6 for binomial and poisson distribution respectively.}
 \item{show.msg}{If \code{show.msg=T}, progress of robustgam is displayed.}
 \item{count.lim}{maximum number of iterations of the whole algorithm}
-\item{w.count.lim}{maximum number of updates on the weight. It corresponds to zeta in \emph{Wong, Yao and Lee (2012)}}
+\item{w.count.lim}{maximum number of updates on the weight. It corresponds to zeta in \emph{Wong, Yao and Lee (2013)}}
 \item{smooth.basis}{the specification of basis. Four choices are available: \code{"tp"} = thin plate regression spline, \code{"cr"} = cubic regression spline, \code{"ps"} = P-splines, \code{"tr"} = truncated power spline. For more details, see \code{\link{smooth.construct}}.}
-\item{wx}{If \code{wx=T}, robust weight on the covariates are applied. For details, see Real Data Example in \emph{Wong, Yao and Lee (2012)}}
+\item{wx}{If \code{wx=T}, robust weight on the covariates are applied. For details, see Real Data Example in \emph{Wong, Yao and Lee (2013)}}
 \item{lsp.initial}{A vector of initial values of the \emph{log} of smoothing parameters used to start the optimization algorithm.}
 \item{lsp.min}{a vector of minimum values of the searching range for the \emph{log} of smoothing parameters. If only one value is specified, it will be used for all smoothing parameters.}
 \item{lsp.max}{a vector of maximum values of the searching range for the \emph{log} of smoothing parameters. If only one value is specified, it will be used for all smoothing parameters.}
@@ -48,7 +48,7 @@ robustgam.GIC.optim(X, y, family, p=3, K=30, c=1.345, show.msg=FALSE, count.lim=
 }
 
 \references{
-Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
+Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2013) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
 }
 
 \author{

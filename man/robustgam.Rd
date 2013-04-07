@@ -5,7 +5,7 @@ Pseudo Data Algorithm for Robust Estmation of GAMs
 }
 
 \description{
-This function implements a fast and stable algorithm developed in \emph{Wong, Yao and Lee (2012)} for robust estimation of generalized additive models. Currently, this implementation only covers binomial and poisson distributions. This function does not choose smoothing parameter by itself and the user has to specify it manunally. For implementation with automatic smoothing parameter selection, see \code{\link{robustgam.GIC}}, \code{\link{robustgam.GIC.optim}}, \code{\link{robustgam.CV}}. For prediction, see \code{\link{pred.robustgam}}.
+This function implements a fast and stable algorithm developed in \emph{Wong, Yao and Lee (2013)} for robust estimation of generalized additive models. Currently, this implementation only covers binomial and poisson distributions. This function does not choose smoothing parameter by itself and the user has to specify it manunally. For implementation with automatic smoothing parameter selection, see \code{\link{robustgam.GIC}}, \code{\link{robustgam.GIC.optim}}, \code{\link{robustgam.CV}}. For prediction, see \code{\link{pred.robustgam}}.
 }
 
 \usage{
@@ -23,9 +23,9 @@ robustgam(X, y, family, p=3, K=30, c=1.345, sp=-1, show.msg=FALSE, count.lim=200
 \item{sp}{a vector of smoothing parameter. If only one value is specified, it will be used for all smoothing parameters.}
 \item{show.msg}{If \code{show.msg=T}, progress is displayed.}
 \item{count.lim}{maximum number of iterations of the whole algorithm}
-\item{w.count.lim}{maximum number of updates on the weight. It corresponds to zeta in \emph{Wong, Yao and Lee (2012)}}
+\item{w.count.lim}{maximum number of updates on the weight. It corresponds to zeta in \emph{Wong, Yao and Lee (2013)}}
 \item{smooth.basis}{the specification of basis. Four choices are available: \code{"tp"} = thin plate regression spline, \code{"cr"} = cubic regression spline, \code{"ps"} = P-splines, \code{"tr"} = truncated power spline. For more details, see \code{\link{smooth.construct}}.}
-\item{wx}{If \code{wx=T}, robust weight on the covariates are applied. For details, see Real Data Example in \emph{Wong, Yao and Lee (2012)}}
+\item{wx}{If \code{wx=T}, robust weight on the covariates are applied. For details, see Real Data Example in \emph{Wong, Yao and Lee (2013)}}
 }
 
 \value{
@@ -43,7 +43,7 @@ robustgam(X, y, family, p=3, K=30, c=1.345, sp=-1, show.msg=FALSE, count.lim=200
 }
 
 \references{
-Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2012) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
+Raymond K. W. Wong, Fang Yao and Thomas C. M. Lee (2013) \emph{Robust Estimation for Generalized Additive Models}. \emph{Journal of Graphical and Computational Statistics}, to appear.
 }
 
 \author{

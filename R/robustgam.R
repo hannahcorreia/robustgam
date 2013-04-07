@@ -41,6 +41,7 @@ robustgam <- function(X, y, family, p=3, K=30, c=1.345, sp=-1, show.msg=FALSE, c
       stemp <- s(X[,j], bs="ps", m=c(2,2), k=2+K+2)
       stemp$term <- names(data)[j]; stemp$label <- paste(c("s(",names(data)[j],")"),collapse="")
       basis[[j]]  <- smooth.construct.ps.smooth.spec(stemp,data,NULL)
+      basis[[j]]$df <- dim(basis[[j]]$X)[2]
     }
   }
 
