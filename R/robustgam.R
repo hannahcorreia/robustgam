@@ -98,9 +98,9 @@ robustgam <- function(X, y, family, p=3, K=30, c=1.345, sp=-1, show.msg=FALSE, c
 
   main.fit <- rgam.fast.main(Ry=y, RX=X, Rfamily=family, Rc=c, RB=B, RrS=rS, Rexpect=expect, Rw_fun=w.fun, Rm_initial=m.initial, Rbeta_old=beta.old, Rcount_lim=count.lim, Rw_count_lim=w.count.lim,Rdisplay=show.msg)
 
-  if (main.fit$converge!=1) {
-    cat("The algorithm did not converage!\n")
-  }
+  #if (main.fit$converge!=1) {
+  #  cat("The algorithm did not converage!\n")
+  #}
 
   # reconstructing the beta in original basis representation
   beta.fit <- main.fit$beta
@@ -139,4 +139,28 @@ pred.robustgam <- function(fit, data, type="response"){
     stop("no such option for type\n")
   }
   return(list(predict.comp=predict.comp, predict.values=out))
+}
+
+cplot.robustgam <- function(fit, ranges, len=100){
+  if ("optim.fit"%in%names(fit)){
+    fit <- fit$optim.fit
+  }
+  ranges <- matrix(ranges, nrow=2)
+  nxs <- length(fit$basis)
+  X <- matrix(nrow=len, ncol=nxs)
+  for (j in (1:nxs)){
+    X[,j] <- seq(ranges[1,j], ranges[2,j], len=len)
+  }
+  dat1 <- data.frame(X=X)
+  if (nxs>1){
+    names(dat1) <- paste("X", 1:nxs, sep="")
+  }
+  pre.res <- pred.robustgam(fit=fit, data=dat1, type="response")
+  pre.comp <- pre.res$predict.comp
+  pre.comp[,1] <- pre.comp[,1]/mean(pre.comp[,1])
+  for (j in (1:nxs)){
+    plot(X[,j], pre.comp[,j], xlab=paste(c("x",j), collapse=""), ylab=paste(c("f",j), collapse=""), type="l", main=paste(c("Component ",j),collapse=""))
+    readline(prompt = "Pause. Press <Enter> to continue...")
+  }
+  return(invisible())
 }

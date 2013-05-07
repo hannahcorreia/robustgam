@@ -1,11 +1,12 @@
-26a3eb4d648b89a2341ddb9142100188 *DESCRIPTION
-0f748b88c85f1bf3d76e0acb7d850db4 *NAMESPACE
+42f017e47205d81e4d9dfdbd202eee9b *DESCRIPTION
+c7e784375504627f08618d4e4d332f4d *NAMESPACE
 c6fb5b87e9187c5d4ba73dbed4afeac2 *R/fit.gam.R
 bba067c6a733ba878489b5242921699f *R/rgam.fast.main.R
-e0029b03dd17743a2bbacf0a2be43cf4 *R/robustgam.R
+fd82526f2ab8beeb678bf00660bc3b2e *R/robustgam.R
 e4e595e505cb55067f43897c534be5d3 *R/robustgam.basic.R
 10d765c0843f2716824f7adc54154b36 *R/robustgam.crossval.R
 2923038b3cdcc9ad84f8daeec593907b *R/robustgam.gic.R
+4364430bf3428756bc6a9f27fe0d312b *man/cplot.robustgam.Rd
 0e6bb2dcd6a80750f9ef5ac37d3fe2da *man/pred.robustgam.Rd
 304cbf3d05df7629fb0e37baa8116075 *man/robustgam-package.Rd
 75e11b075fa2feced8d22a9ef2e62d4f *man/robustgam.CV.Rd
