@@ -109,7 +109,8 @@ robustgam <- function(X, y, family, p=3, K=30, c=1.345, sp=-1, show.msg=FALSE, c
     tempindex <- dfs[1]
     for (j in (2:nxs)){
       beta <- c(beta,Z[[j]]%*%beta.fit[(tempindex+1):(tempindex+dfs[j]-1)])
-      tempindex <- tempindex + dfs[j]
+      # tempindex <- tempindex + dfs[j]
+      tempindex <- tempindex + dfs[j] - 1
      }
   }
   return(list(fitted.values=as.vector(main.fit$fitted.values),initial.fitted=m.initial,beta=beta,B=B,sD=sD,basis=basis,converage=(main.fit$converge==1), w=as.vector(main.fit$w),family=family,wx=wx, beta.fit=beta.fit))
